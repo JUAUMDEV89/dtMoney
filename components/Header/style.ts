@@ -28,5 +28,15 @@ export const Content = styled.div`
             filter: brightness(0.9);
         }
     }
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button{
+            margin-right: 1rem;
+        }
+    }
 `;
 
