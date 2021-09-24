@@ -3,10 +3,8 @@ import {
     TransactionTypeContainer,
     RadioBox  
  } from './style';
-import { api } from '../../services/api';
 import Modal from 'react-modal';
 import { FormEvent, useState } from 'react';
-import { useContext } from 'react';
 import { useTransactions } from '../../hooks/useTransactions';
 
 interface NewTransactionMdalProps{
@@ -48,6 +46,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMd
         onRequestClose={onRequestClose}
         overlayClassName="react-modal-overlay"
         className="react-modal-content"
+
       >
         <Container onSubmit={handleCreateNewTransaction}>
             <h2>Cadastrar Transação</h2>

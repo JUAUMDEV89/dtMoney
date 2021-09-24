@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-   width: 100%;
-   max-width: 1080px;
-   margin: 0 auto;
+  background: ${props => props.theme.colors.background};
+  height: 100vh;
 `;

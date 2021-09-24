@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Container, Content } from './style';
 import "react-toggle/style.css" 
-import Toggle from 'react-toggle';
+import Switch from 'react-switch';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
 interface HeaderProps{
     onOpenNewTransactionModal: ()=>void;
+    toggleThemeFunction: ()=>void;
 }
 
-export function Header({ onOpenNewTransactionModal }: HeaderProps){
+export function Header({ onOpenNewTransactionModal, toggleThemeFunction }: HeaderProps){
 
     const [baconIsReady, setBaconIsReady] = useState(false);
 
-    function handleBaconChange(){
-        
-    }
+    const { colors, title } = useContext(ThemeContext);
 
     return( 
         <>
@@ -26,10 +27,18 @@ export function Header({ onOpenNewTransactionModal }: HeaderProps){
                               Nova Transação
                           </button>
 
-                          <Toggle
-                            defaultChecked={baconIsReady}
-                            onChange={handleBaconChange} 
+                          <Switch 
+                            onChange={toggleThemeFunction}
+                            checked={title === 'light'}
+                            checkedIcon={false}
+                            uncheckedIcon={false}
+                            height={10}
+                            width={40}
+                            handleDiameter={20}
+                            offColor={shade(0.5, colors.primary)}
+                            onColor={colors.secundary}
                           />
+                          
                         </div>
                    </Content>
                 </Container>

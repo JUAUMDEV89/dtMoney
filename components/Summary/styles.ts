@@ -12,10 +12,10 @@ export const Container = styled.div`
       }
 
    div{
-      background: var(--shape);
+      background: ${props => props.theme.colors.box};
       padding: 1.5rem 2rem;
       border-radius: 0.25rem;
-      color: var(--text-title);
+      color: ${props => props.theme.colors.text};
       margin-left: 2rem;
       height: 8rem;
       width: 20rem;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { GlobalStyle } from '../styles/global';
 import { createServer, Model } from 'miragejs';
 import { TransactionsProvider } from '../hooks/useTransactions';
@@ -47,11 +48,14 @@ createServer({
 })
 
 function MyApp({ Component, pageProps }) {
+
   return (
-    <TransactionsProvider>
-       <GlobalStyle />
-       <Component {...pageProps} />
-    </TransactionsProvider>    
+
+      <TransactionsProvider>
+          <GlobalStyle />
+          <Component {...pageProps} />
+      </TransactionsProvider>
+     
   )
 }
 

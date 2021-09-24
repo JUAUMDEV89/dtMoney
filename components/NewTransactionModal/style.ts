@@ -12,8 +12,9 @@ const colors = {
 }
 
 export const Container = styled.form`
+
    h2{
-       color: var(--text-title);
+       color: ${props=>props.theme.colors.title};
        font-size: 1.5rem;
        font-family: 'Poppins', sans-serif;
        margin-bottom: 2rem;
