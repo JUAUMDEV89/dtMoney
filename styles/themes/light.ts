@@ -7,6 +7,7 @@ export default {
 
         background: '#f8f2f5',
         text: '#363f5f',   
-        box: '#ffffffff'       
+        box: '#ffffffff',
+        inputColor: ''       
     }
 } 

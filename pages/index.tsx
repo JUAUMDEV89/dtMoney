@@ -32,6 +32,7 @@ export default function Home() {
       <Container>
         <Header toggleThemeFunction={toggleTheme} onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
          <NewTransactionModal
+           theme={theme}
            isOpen={isTransactionModalOpen}
            onRequestClose={handleClosedTransactionModal}
          />

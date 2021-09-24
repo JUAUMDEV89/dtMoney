@@ -1,20 +1,23 @@
 import { 
     Container,
     TransactionTypeContainer,
-    RadioBox  
+    RadioBox 
  } from './style';
 import Modal from 'react-modal';
 import { FormEvent, useState } from 'react';
 import { useTransactions } from '../../hooks/useTransactions';
+import light from '../../styles/themes/light';
+import dark from '../../styles/themes/dark';
 
 interface NewTransactionMdalProps{
   isOpen: boolean;
-  onRequestClose: ()=>void
+  onRequestClose: ()=>void;
+  theme: {}
 }
 
 type TypeTransactionModalProps = 'deposit' | 'withdraw';
 
-export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMdalProps){
+export function NewTransactionModal({ isOpen, onRequestClose, theme }: NewTransactionMdalProps){
 
     const { createTransaction } = useTransactions();
 
@@ -40,13 +43,25 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMd
          onRequestClose();
     }
 
+    const customStyles = {
+      content: {
+        top: '40%',
+        left: '45%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '50%',
+        backgroundColor: theme === light ? '#f8f2f5' : '#514d51',
+        transform: 'translate(-50%, -50%)',
+      },
+    };
+
     return(
-      <Modal 
+        <Modal 
         isOpen={isOpen}
         onRequestClose={onRequestClose}
         overlayClassName="react-modal-overlay"
         className="react-modal-content"
-
+        style={customStyles}
       >
         <Container onSubmit={handleCreateNewTransaction}>
             <h2>Cadastrar Transação</h2>

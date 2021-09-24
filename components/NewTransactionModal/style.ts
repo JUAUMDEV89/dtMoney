@@ -11,10 +11,11 @@ const colors = {
     green: '#33cc95'
 }
 
+
 export const Container = styled.form`
 
    h2{
-       color: ${props=>props.theme.colors.title};
+       color: ${props=>props.theme.colors.text};
        font-size: 1.5rem;
        font-family: 'Poppins', sans-serif;
        margin-bottom: 2rem;
@@ -28,7 +29,7 @@ export const Container = styled.form`
 
        border-radius: 0.25rem;
        border: 1px solid #d7d7d7;
-       background: #e7e9ee;
+       background: ${props=>props.theme.colors.box};
 
        font-weight: 400;
        font-size: 1rem;
